@@ -2,7 +2,7 @@ const getExpenses = async (req, res) => {
     res.send("get expense");
 };
 
-// add expense
+// add expense, should include filters
 const addExpense = async (req, res) => {
     res.send("add expense");
 };
