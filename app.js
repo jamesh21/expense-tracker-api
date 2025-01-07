@@ -15,7 +15,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/expenses", authenticateMiddleware, expenseRouter);
+app.use("/api/v1/expense", authenticateMiddleware, expenseRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
