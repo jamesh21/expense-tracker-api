@@ -4,15 +4,15 @@ const { NotFoundError, BadRequestError } = require("../errors");
 
 const getExpenses = async (req, res) => {
     const { userId } = req.user;
-    const { timeFilter, categoryFilter, startDate, endDate } = req.query;
+    const { time, category, startDate, endDate } = req.query;
     const queryObject = {
         createdBy: userId,
     };
-    if (timeFilter) {
-        queryObject.expenseDate = buildPresetTimeQuery(timeFilter);
+    if (time) {
+        queryObject.expenseDate = buildPresetTimeQuery(time);
     }
-    if (categoryFilter) {
-        queryObject.category = categoryFilter;
+    if (category) {
+        queryObject.category = category;
     }
     if (startDate || endDate) {
         // custom time filter
@@ -66,7 +66,7 @@ const updateExpense = async (req, res) => {
     const { expenseId } = req.params;
     const { userId } = req.user;
     const { name, cost, category, expenseDate } = req.body;
-    console.log("entered here");
+
     if ((name === "" || cost === "" || category === "", expenseDate === "")) {
         throw new BadRequestError(
             "Name, cost, category or expense date cannot be left empty"
@@ -78,7 +78,6 @@ const updateExpense = async (req, res) => {
         { new: true, runValidators: true }
     );
     if (!expense) {
-        console.log("entered here into not found error");
         throw new NotFoundError(`Expense with this ${expenseId} was not found`);
     }
     res.status(StatusCodes.OK).json({ data: expense });
