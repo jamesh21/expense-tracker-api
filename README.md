@@ -44,4 +44,4 @@ This project is an Expense API built using Node.js and Express. The purpose of t
 
 ## Credits
 
-This project idea is from [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service)
+This project idea is from [roadmap.sh](https://roadmap.sh/projects/expense-tracker-api)
