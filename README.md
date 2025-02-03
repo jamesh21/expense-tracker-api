@@ -38,7 +38,7 @@ This project is an Expense API built using Node.js and Express. The purpose of t
     - MONGO_URI (URI of your MongoDB instance)
     - JWT_LIFETIME (Duration of jwt ex. 30d)
     - JWT_SECRET (Your generated JWT secret [Use this link to generate 256 key](https://acte.ltd/utils/randomkeygen])
-4. Start up MongoDB instance of running locally
+4. Start up MongoDB instance if running locally
 5. run `npm start`
 6. Make sure to register and login before hitting any of the expense routes
 
